@@ -1,25 +1,48 @@
-import logo from './logo.svg';
 import './App.css';
+import {QuoteBox} from "./components/QuoteBox"
+import React from 'react';
+import * as ReactRedux from 'react-redux';
+import {store} from "./store";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+  constructor(props) {
+    super(props); 
+  }
+  render() {
+    return (
+      <div className="App">
+        <QuoteBox />
+      </div>
+    );
+  }
 }
 
-export default App;
+// CONNECT WITH STORE 
+const Provider = ReactRedux.Provider;
+const connect = ReactRedux.connect;
+
+const mapStateToProps = (state) => {
+  return {
+    data: state
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+  }
+} 
+
+const Container = connect(mapStateToProps, mapDispatchToProps)(App);
+
+class AppWrapper extends React.Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <Container/>
+      </Provider>
+    );
+  }
+};
+
+export default AppWrapper;
