@@ -11,8 +11,8 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div className="App">
-        <QuoteBox />
+      <div className="App" >
+        <QuoteBox data={this.props.data}/>
       </div>
     );
   }
@@ -38,11 +38,13 @@ const Container = connect(mapStateToProps, mapDispatchToProps)(App);
 class AppWrapper extends React.Component {
   render() {
     return (
-      <Provider store={store}>
-        <Container/>
+      <Provider store={store} >
+        <Container />
       </Provider>
     );
   }
 };
 
 export default AppWrapper;
+
+

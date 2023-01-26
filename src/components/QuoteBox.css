@@ -1,3 +1,108 @@
+:root {
+    --tranisition-duration: 1s; 
+}
+
+.bold {
+    padding-left: 5px;
+    font-weight: 700; 
+}
+
+#component-container {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    text-align: center; 
+}
+
+
+#quote-box, #my-name {
+    font-family: "Raleway",Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 10px;
+
+}
 #quote-box {
+    width: 600px;
+    padding: 30px 0; 
+    margin-bottom: 20px; 
+    background-color: rgba(255, 255, 255, 0.895);  
+    display: flex; 
+    flex-direction: column;
+}
+
+#my-name {
+    width: 200px; 
+    background-color: rgba(255, 255, 255, 0.749);  
+}
+
+#my-name p {
+    margin: 5px 0; 
+    transition-property: color;
+    transition-duration: var(--tranisition-duration);
+}
+
+
+#quote-icon {
+    font-size: 20px; 
+    position: relative;
+    top: -15px; 
+    left: -7.5px; 
+}
+
+#text {
+    margin: 0; 
+    font-size: 35px; 
+    font-weight: 500;
+    letter-spacing: 1px;
     
 }
+
+#author {
+    margin-top: 5px; 
+    padding-right: 25px; 
+    font-size: 20px;
+    font-weight: 200; 
+    letter-spacing: 2px;
+    text-align: end;
+}
+
+#quote-info {
+    padding: 0 5%; 
+    transition-property: color;
+    transition-duration: var(--tranisition-duration);
+}
+
+#buttons {
+    margin-top: 10px; 
+    padding: 0 5%;
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between;
+}
+
+#social-media {
+    margin-left: 20px; 
+    display: flex;
+    font-size: 25px;
+}
+
+#social-media a {
+    margin-left: 10px; 
+    transition-property: background-color;
+    transition-duration: var(--tranisition-duration);
+}
+
+#new-quote {
+    font-size: 20px; 
+    letter-spacing: 1.5px;
+    transition-property: background-color;
+    transition-duration: var(--tranisition-duration);
+}
+
+#new-quote, #social-media a {
+    padding: 10px 20px; 
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.895); 
+    border: 0; 
+}
+
+
